@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@keyframes rgb {
+  0%,
+  100% {
+    color: red;
+  }
+  8% {
+    color: orange;
+  }
+  16% {
+    color: yellow;
+  }
+  25% {
+    color: green;
+  }
+  33% {
+    color: blue;
+  }
+  41% {
+    color: indigo;
+  }
+  50% {
+    color: violet;
+  }
+  58% {
+    color: indigo;
+  }
+  66% {
+    color: blue;
+  }
+  75% {
+    color: green;
+  }
+  83% {
+    color: yellow;
+  }
+  91% {
+    color: orange;
+  }
+}
+
+.rgb-animation {
+  animation: rgb 10s ease-in-out infinite;
+}
