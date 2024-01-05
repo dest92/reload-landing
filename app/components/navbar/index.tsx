@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/navigation";
 import {
   Navbar,
   NavbarBrand,
@@ -21,7 +20,7 @@ export default function ReloadNavbar() {
   return (
     <Navbar>
       <NavbarBrand>
-        <Link className="font-bold text-inherit" href="/">
+        <Link className="font-bold text-inherit text-xl" href="/">
           Reload Gaming
         </Link>
       </NavbarBrand>
