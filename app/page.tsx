@@ -6,7 +6,6 @@ import Footer from "./components/footer";
 export default function Home() {
   return (
     <>
-      <ReloadNavbar />
       <div className="p-5">
         <h1 className="font-bold text-5xl">
           Esto, es <span className="rgb-animation">Reload.</span>
@@ -98,7 +97,6 @@ export default function Home() {
           </div>
         </div>{" "}
       </div>
-      <Footer />
     </>
   );
 }
