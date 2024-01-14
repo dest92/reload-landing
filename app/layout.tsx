@@ -23,9 +23,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <div className="flex flex-col min-h-screen">
-            <ReloadNavbar />
             <main className="lex-grow">{children}</main>
-            <Footer />
           </div>
         </Providers>
       </body>
