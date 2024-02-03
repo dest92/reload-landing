@@ -20,34 +20,40 @@ export default function ReloadNavbar() {
   const pathname = usePathname();
   const isActive = (route: string) => pathname === route;
 
-  const menuItems = [
-    "Servers",
-    "Modos de Juegos",
-    "Login",
-    "Register",
-    "Mi Perfil",
-    "Log Out",
-  ];
+  const menuItems = ["Servers", "Inicio"];
 
   const menuLinks = {
     Servers: "/servers",
-    "Modos de Juegos": "/game-modes",
-    Login: "/login",
-    Register: "/register",
-    "Mi Perfil": "/profile",
-    "Log Out": "/logout",
+    Inicio: "/",
+    // "Modos de Juegos": "/game-modes",
+    // Login: "/login",
+    // Register: "/register",
+    // "Mi Perfil": "/profile",
+    // "Log Out": "/logout",
   };
 
   return (
     <Navbar>
       <NavbarMenuToggle />
 
-      <NavbarBrand>
-        <Link className="font-bold text-inherit text-xl" href="/">
-          Reload Gaming
-        </Link>
-      </NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-4" justify="start">
+        <NavbarBrand>
+          <Link className="font-bold text-inherit text-xl" href="/">
+            Reload Gaming
+          </Link>
+        </NavbarBrand>
+      </NavbarContent>
+
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem isActive={isActive("/")}>
+          <Link
+            href="/#"
+            color="foreground"
+            className={isActive("/") ? "text-blue-600" : ""}
+          >
+            Inicio
+          </Link>
+        </NavbarItem>
         <NavbarItem isActive={isActive("/servers")}>
           <Link
             href="/servers"
@@ -56,28 +62,6 @@ export default function ReloadNavbar() {
           >
             Servers
           </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#" aria-current="page">
-            Modos de juegos
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Unirse
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#" color="foreground">
-            Login
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat">
-            Registrarse
-          </Button>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>

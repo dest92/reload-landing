@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <div className="p-5">
+        <div className="p-5" id="/">
           <h1 className="font-bold text-5xl">
             Esto, es <span className="rgb-animation">Reload.</span>
           </h1>
